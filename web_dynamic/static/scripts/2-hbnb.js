@@ -12,9 +12,11 @@ $(function () {
         }
         ToArray(allAmenities);
     });
-
     $.get('http://localhost:5001/api/v1/status/', function(data) {
         if (data.status === 'OK') {
             $('div#api_status').addClass('available');
+            console.log('todo ok')
+        }
     });
 });
+
