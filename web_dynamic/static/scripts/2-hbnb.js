@@ -13,11 +13,8 @@ $(function () {
         ToArray(allAmenities);
     });
 
-    $.get('http://127.0.0.1:5001/api/v1/status/', function(res) {
+    $.get('http://localhost:5001/api/v1/status/', function(res) {
         if (res.status === 'OK') {
-            $('#api_status').addClass('available');
-        } else {
-            $('#api_status').removeClass('available');
-        }
+            $('div#api_status').addClass('available');
     });
 });
