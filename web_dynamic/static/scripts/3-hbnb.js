@@ -22,8 +22,8 @@ $(function () {
     $.ajax({
         url: 'http://localhost:5001/api/v1/places_search/',
         method: 'POST',
-        contentType: 'aplication/json',
-        datatype: 'json',
+        contentType: 'application/json',
+        dataType: 'json',
         data: JSON.stringify({}),
         success: function (data) {
             data.forEach(d => $('.places').append(addPlace(d)));
