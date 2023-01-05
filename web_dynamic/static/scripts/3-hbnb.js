@@ -27,6 +27,28 @@ $(function () {
         success: function (data) {
             data.forEach(d => $('.places').append(addPlace(d)));
         }
-    })
-});
+    });
 
+    function addPlace (place) {
+        return `
+        <article>
+        <div class="title_box">
+            <h2>${place.name}</h2>
+            <div class="price_by_night">${place.price_by_night}
+            </div>
+            </div>
+            <div class="information">
+            <div class="max_guest">
+            ${place.max_guest} Guest
+            </div>
+            <div class="number_rooms">${place.number_rooms} Bedroom
+            </div>
+            <div class="number_bathrooms">${place.number_bathrooms} Bathroom
+            </div>
+            </div>
+            <div class="description">${place.description}
+            </div>
+            </article>
+        `;
+    }
+});
