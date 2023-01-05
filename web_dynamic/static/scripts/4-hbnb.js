@@ -52,4 +52,17 @@ $(function () {
             </article>
         `;
     }
+
+    $('button').click(() => {
+        $('.places').empty();
+        $.ajax({
+            url: 'http://localhost:5001/api/v1/places_search/',
+            method: 'POST',
+            data: JSON.stringify({ amenities: Object.keys(amenityIds) }),
+            contentType: 'application/json',
+            success: function (data) {
+                data.forEach(d => $('.places').append(addPlace(d)));
+            }
+        });
+    });
 });
